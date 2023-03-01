@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5_5_6</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        function Calculator() {
+            this.calculate = function(str) {
+                let operator = str.split(" ")[1];
+                let numbers = str.split(operator).map(item => +item);
+                return this[operator](numbers[0], numbers[1]);
+            };
+            this["-"] = (a, b) => a - b; 
+            this["+"] = (a, b) => a + b; 
+            this.addMethod = function(name, func) {
+                return this[name] = func;
+            }  
+            
+        }
+
+        let calc = new Calculator;
+
+        alert( calc.calculate("3 + 7") ); // 10
+        let powerCalc = new Calculator;
+        powerCalc.addMethod("*", (a, b) => a * b);
+        powerCalc.addMethod("/", (a, b) => a / b);
+        powerCalc.addMethod("**", (a, b) => a ** b);
+
+        let result = powerCalc.calculate("2 ** 3");
+        alert( result ); 
+    </script>
+</body>
+</html>

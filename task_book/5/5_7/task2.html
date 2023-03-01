@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5_7_2</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        
+        function aclean(arr) {
+            let answer = {};
+            for (let i = 0; i < arr.length; i++) {
+            let pos = arr[i].toUpperCase().split("").sort().join("");
+                answer[pos] = arr[i];
+            }
+            return Object.values(answer);
+        }
+
+        let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+        alert( aclean(arr) );
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>2_11_9</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let userName = prompt("Кто там?");
+        if (userName == "Админ") {
+            let password = prompt("Пароль?");
+            if (password == "Я Главный") {
+                alert("Здравствуйте!");
+            } else if (password == null || password == "") {
+                alert("Отменено");
+            } else {
+                alert("Неверный пароль");
+            }
+        } else if (userName == null || userName == "") {
+            alert('Отменено');
+        } else {
+            alert("Я вас не знаю");
+        }
+    </script>
+</body>
+</html>

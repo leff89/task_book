@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5_5_1</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        function camelize(str) {
+            let arr = str.split("-");
+            let newArr =  arr.slice(1).map(s => s[0].toUpperCase() + s.slice(1));
+            newArr.unshift(arr[0]);
+            return newArr.join('');
+        }
+
+        alert(camelize("background-color"));            
+        alert(camelize("list-style-image"));        
+        alert(camelize("-webkit-transition"));               
+    </script>
+</body>
+</html>

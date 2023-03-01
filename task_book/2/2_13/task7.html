@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>2_13_7</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let n = +prompt("Введите число");
+        other: for (i = 2; i <= n; i++) {
+            for (j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    continue other;
+                }
+            }
+            alert(i);
+        }
+    </script>
+</body>
+</html>
